@@ -1,0 +1,13 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/fate/Рабочий стол/21projects/cub3d'
+mkdir -p object/gnl
+clang -Wall -Wextra -Werror -g -I./includes/ -I./gnl/ -I./libft/ -g -c -o object/gnl/get_next_line.o gnl/get_next_line.c
+mkdir -p object/gnl
+clang -Wall -Wextra -Werror -g -I./includes/ -I./gnl/ -I./libft/ -g -c -o object/gnl/get_next_line_utils.o gnl/get_next_line_utils.c
+mkdir -p object
+clang -Wall -Wextra -Werror -g -I./includes/ -I./gnl/ -I./libft/ -g -c -o object/main.o main.c
+echo "Linking..."
+make -C ./libft/
+clang object/gnl/get_next_line.o object/gnl/get_next_line_utils.o object/main.o -o minishell libft/libft.a -framework OpenGL -framework AppKit
+make: Leaving directory '/home/fate/Рабочий стол/21projects/cub3d'
+ 
