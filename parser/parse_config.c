@@ -18,7 +18,7 @@ int	parse_settings(t_cub *cub, t_config *config, int *end_of_config)
 			return (INVALID_CONFIG_PARAM);
 		}
 	}
-	if (check_config_param(cub) != CUB_OK)
+	if (check_config_param(config) != CUB_OK)
 		return (INVALID_CONFIG_PARAM);
 	return (convert_img(cub, config));
 }
@@ -43,10 +43,10 @@ int	parse_config(t_cub **cub, char *path_to_cfg)
 		free(cub);
 		return (err);
 	}
-	err = parse_map(cub, &config, end_of_config);
+	err = parse_map(cub, config, end_of_config);
+	free_config(config);
 	if (err)
 	{
-		free_str_arr(config);
 		clear_cub(cub);
 		return (err);
 	}

@@ -5,7 +5,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <errno.h>
- #include <string.h>
+# include <string.h>
 # include "mlx.h"
 # include "libft.h"
 # include "get_next_line.h"
@@ -19,7 +19,7 @@
 # define INVALID_CONFIG_PARAM 6
 # define NO_MAP_IN_CONFIG 7
 # define UNKNOW_SYM 8
-# define UNCLOSED_MAP 9
+# define INVALID_MAP 9
 # define EMPTY_IDENTIFER 10
 # define IDENTIFER_ALREADY_EXIST 11
 # define NOT_RGB 12
@@ -44,6 +44,13 @@
 #define SCREEN_INDEX 4
 #define F_INDEX 4
 #define C_INDEX 5
+
+typedef struct s_point2d
+{
+	int	x;
+	int	y;
+}	t_point2d;
+
 
 typedef struct	s_img {
 	void	*img;
@@ -87,7 +94,7 @@ int	parse_settings(t_cub *cub, t_config *config, int *end_of_config);
 int	convert_img(t_cub *cub, t_config *config);
 
 /*----parse_config_line----*/
-int	check_config_param(t_cub *cub);
+int	check_config_param(t_config *cfg);
 int	get_identefer_index(char *str);
 int	parse_path(t_config *config, char *str, int index);
 int	parse_color(t_config *config, char *str, int index);

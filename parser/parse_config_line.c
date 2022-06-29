@@ -1,18 +1,18 @@
 #include "cub.h"
 
-int	check_config_param(t_cub *cub)
+int	check_config_param(t_config *cfg)
 {
-	if (!cub->north_texture)
+	if (!cfg->path_to_texture[NO_INDEX])
 		ft_putendl_fd("cub3d: north texture not found", 2);
-	else if (!cub->south_texture)
+	else if (!cfg->path_to_texture[SO_INDEX])
 		ft_putendl_fd("cub3d: south texture not found", 2);
-	else if (!cub->west_texture)
+	else if (!cfg->path_to_texture[WE_INDEX])
 		ft_putendl_fd("cub3d: west texture not found", 2);
-	else if (!cub->east_texture)
+	else if (!cfg->path_to_texture[EA_INDEX])
 		ft_putendl_fd("cub3d: east texture not found", 2);
-	else if (cub->floor_color < 0)
+	else if (cfg->colors[0] < 0)
 		ft_putendl_fd("cub3d: floor color not found", 2);
-	else if (cub->ceilling_color < 0)
+	else if (cfg->colors[1] < 0)
 		ft_putendl_fd("cub3d: ceilling color not found", 2);
 	else
 		return (CUB_OK);
