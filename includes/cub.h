@@ -26,6 +26,7 @@
 # define END_CONFIG 13
 # define TEXTURE_PATH_ERROR 14
 # define CANT_CONVERT 15
+# define TOO_MANY_PLAYERS 16
 
 # define NORTH_TEXTURE_IDENTIFER "NO"
 # define SOUTH_TEXTURE_IDENTIFER "SO"
@@ -37,13 +38,18 @@
 # define PNG 0
 # define XPM 1
 
-#define NO_INDEX 0
-#define SO_INDEX 1
-#define WE_INDEX 2
-#define EA_INDEX 3
-#define SCREEN_INDEX 4
-#define F_INDEX 4
-#define C_INDEX 5
+# define NO_INDEX 0
+# define SO_INDEX 1
+# define WE_INDEX 2
+# define EA_INDEX 3
+# define SCREEN_INDEX 4
+# define F_INDEX 4
+# define C_INDEX 5
+
+# define RIGHT 2
+# define LEFT 3
+# define DOWN 4
+# define UP 5
 
 typedef struct s_point2d
 {
@@ -102,6 +108,15 @@ int	parse_identefer(t_config *config, char *str);
 
 /*----parse_rgb----*/
 int	parse_rgb(char *str, int *color);
+
+/*----parse_config_map----*/
+int	is_empty_line(char *line);
+int	go_rl_direction(char **map, int x, int y, int direction);
+int	go_ud_direction(char **map, int x, int y, int direction);
+int	draw_board(char **map, int x, int y, int direction);
+int	is_closed(char **map, int end_of_config);
+int	map_check_valid_sym(t_config *cfg, int start_map);
+int	parse_map(t_cub *cub, t_config *cfg, int end_of_config);
 
 /*----------UTILS---------*/
 

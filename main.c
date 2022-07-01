@@ -4,9 +4,10 @@
 
 int	main(int argc, char **argv)
 {
+	int		err;
 	t_cub	*cub;
 
-	err = check_args(argc, argv);
+	err = check_argv(argc, argv);
 	if (err)
 		return (print_error(err), CUB_ERR);
 	cub = NULL;

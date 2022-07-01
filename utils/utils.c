@@ -31,7 +31,7 @@ int	is_space(char c)
 int	is_player(char c)
 {
 	if (c == 'N' || c == 'S'
-		c == 'W' || c == 'E')
+		|| c == 'W' || c == 'E')
 		return (1);
 	return (0);
 }

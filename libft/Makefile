@@ -57,6 +57,6 @@ fclean : clean
 re : fclean all
 
 bonus :
-	@make OBJ="$(OBJ_B)" all
+	@make OBJ="$(OBJ) $(OBJ_B)" all
 
 .PHONY : all clean fclean re bonus
