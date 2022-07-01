@@ -27,3 +27,19 @@ int	is_space(char c)
 		return (1);
 	return (0);
 }
+
+int	is_player(char c)
+{
+	if (c == 'N' || c == 'S'
+		c == 'W' || c == 'E')
+		return (1);
+	return (0);
+}
+
+int is_map_object(char c)
+{
+	if (c == ' ' || c == '0'
+		|| c == '1')
+		return (1);
+	return (0);
+}

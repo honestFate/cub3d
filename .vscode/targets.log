@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jun 27 23:10:18 2022
+# Make data base, printed on Thu Jun 30 00:24:30 2022
 
 # Variables
 
@@ -51,10 +51,9 @@ SNAP_DATA = /var/snap/code/99
 # environment
 VSCODE_NLS_CONFIG = {"locale":"ru","availableLanguages":{"*":"ru"},"_languagePackId":"4165c719fdf7a78444ed970b4565033b.ru","_translationsConfigFile":"/home/fate/.config/Code/clp/4165c719fdf7a78444ed970b4565033b.ru/tcf.json","_cacheRoot":"/home/fate/.config/Code/clp/4165c719fdf7a78444ed970b4565033b.ru","_resolvedLanguagePackCoreLocation":"/home/fate/.config/Code/clp/4165c719fdf7a78444ed970b4565033b.ru/30d9c6cd9483b2cc586687151bcbcd635f373630","_corruptedFile":"/home/fate/.config/Code/clp/4165c719fdf7a78444ed970b4565033b.ru/corrupted.info","_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:38613
+JOURNAL_STREAM = 8:44356
 # makefile (from 'Makefile', line 4)
 CFLAGS := -Wall -Wextra -Werror -g
- 
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # environment
@@ -84,9 +83,9 @@ BUILDDIR := object
 # environment
 _ = /snap/code/99/usr/share/code/code
 # environment
-MANAGERPID = 1393
+MANAGERPID = 1351
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-2977a47b-8281-4c76-bc4a-687175fb1d8c.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d3c6f5a2-4a39-4aa3-8213-f22349945e5b.sock
 # environment
 VSCODE_CWD = /home/fate
 # environment
@@ -98,7 +97,7 @@ PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/fate-HP-Pavilion-Gaming-Laptop-15-dk0xxx:@/tmp/.ICE-unix/1616,unix/fate-HP-Pavilion-Gaming-Laptop-15-dk0xxx:/tmp/.ICE-unix/1616
+SESSION_MANAGER = local/fate-HP-Pavilion-Gaming-Laptop-15-dk0xxx:@/tmp/.ICE-unix/1578,unix/fate-HP-Pavilion-Gaming-Laptop-15-dk0xxx:/tmp/.ICE-unix/1578
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -116,7 +115,7 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = aa6d0be5282c41a6974f25a08312f9ad
+INVOCATION_ID = 86305aec47244fc7b52af197b32fd14e
 # environment
 GDK_PIXBUF_MODULEDIR = /snap/code/99/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # makefile (from 'Makefile', line 8)
@@ -130,7 +129,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3368
+GIO_LAUNCHED_DESKTOP_FILE_PID = 3509
 # automatic
 %F = $(notdir $%)
 # environment
@@ -146,7 +145,7 @@ PWD = /home/fate/Рабочий стол/21projects/cub3d
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1578
+SSH_AGENT_PID = 1540
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -276,8 +275,9 @@ OBJECTS := object/gnl/get_next_line.o object/gnl/get_next_line_utils.o object/ma
 # environment
 LANG = C
 # environment
-VSCODE_PID = 3418
+VSCODE_PID = 3561
 # variable set hash-table stats:
+ 
 # Load=133/1024=13%, Rehash=0, Collisions=17/174=10%
 
 # Pattern-specific Variable Values
@@ -302,7 +302,6 @@ object/%.o: %.c
 
 # Files
 
- 
 all: minishell
 #  Command line target.
 #  Implicit rule search has been done.
@@ -434,6 +433,6 @@ object/main.o:
 # strcache performance: lookups = 54 / hit rate = 40%
 # hash-table stats:
 # Load=32/8192=0%, Rehash=0, Collisions=2/54=4%
-# Finished Make data base on Mon Jun 27 23:10:18 2022
+# Finished Make data base on Thu Jun 30 00:24:30 2022
 
  
