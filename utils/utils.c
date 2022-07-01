@@ -43,3 +43,10 @@ int is_map_object(char c)
 		return (1);
 	return (0);
 }
+
+int	is_inner_object(char c)
+{
+	if (is_player(c) || c == '0')
+		return (1);
+	return (0);
+}

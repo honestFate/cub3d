@@ -123,6 +123,9 @@ int	parse_map(t_cub *cub, t_config *cfg, int end_of_config);
 /*----utils----*/
 char	**lst_to_arr(t_list *list, int len);
 int		is_space(char c);
+int	is_player(char c);
+int is_map_object(char c);
+int	is_inner_object(char c);
 
 /*----clear----*/
 void	safe_free(void *data);

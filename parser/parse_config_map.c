@@ -8,85 +8,45 @@ int	is_empty_line(char *line)
 	return (0);
 }
 
-int	go_rl_direction(char **map, int x, int y, int direction)
+int	is_close_line(char *line, int j)
 {
-	map[y][x] = '2';
-	if (direction == RIGHT)
-	{
-		if ((y > 0 && map[y - 1][x] == '1'
-			&& !draw_board(map, x, y - 1, UP))
-			|| (map[y][x + 1] == '1'
-			&& !draw_board(map, x + 1, y, RIGHT))
-			|| (map[y + 1] && map[y + 1][x] == '1'
-			&& !draw_board(map, x + 1, y, DOWN)))
-			return (CUB_OK);
-	}
-	if (direction == LEFT)
-	{
-		if ((map[y + 1] && map[y + 1][x] == '1'
-			&& !draw_board(map, x, y - 1, DOWN))
-			|| (x > 0 && map[y][x - 1] == '1'
-			&& !draw_board(map, x + 1, y, LEFT))
-			|| (y > 0 && map[y - 1] == '1'
-			&& !draw_board(map, x, y - 1, UP)))
-			return (CUB_OK);
-	}
-	map[y][x] = '3';
-	return (CUB_ERR);
+	int	len;
+
+	len = ft_strlen(line);
+	if (len - 1 > j)
+		if (is_inner_object(line[j + 1]))
+			return (CUB_ERR);
+	if (len - 1 >= j)
+		if (is_inner_object(line[j]))
+			return (CUB_ERR);
+	if (j > 0 && len - 2 >= j)
+		if (is_inner_object(line[j - 1]))
+			return (CUB_ERR);
+	return (CUB_OK);
 }
 
-int	go_ud_direction(char **map, int x, int y, int direction)
+int	is_closed(char **map)
 {
-	map[y][x] = '2';
-	if (direction == DOWN)
-	{
-		if ((y > 0 && map[y][x + 1] == '1'
-			&& !draw_board(map, x + 1, y, RIGHT))
-			|| (map[y + 1][x] && map[y + 1][x] == '1'
-			&& !draw_board(map, x, y + 1, DOWN))
-			|| (x > 0 && map[y][x - 1] == '1'
-			&& !draw_board(map, x - 1, y, LEFT)))
-			return (CUB_OK);
-	}
-	if (direction == UP)
-	{
-		if ((x > 0 && map[y][x - 1] == '1'
-			&& !draw_board(map, x - 1, y, LEFT))
-			|| (y > 0 && map[y - 1][x] == '1'
-			&& !draw_board(map, x, y - 1, UP))
-			|| (map[y][x + 1] && map[y][x + 1] == '1'
-			&& !draw_board(map, x + 1, y, RIGHT)))
-			return (CUB_OK);
-	}
-	map[y][x] = '3';
-	return (CUB_ERR);
-}
-
-int	draw_board(char **map, int x, int y, int direction)
-{
-	if (map[y][x] == 's')
-		return (CUB_OK);
-	else if (direction == RIGHT || direction == LEFT)
-		return (go_rl_direction(map, x, y, direction));
-	else
-		return (go_ud_direction(map, x, y, direction));
-}
-
-int	is_closed(char **map, int end_of_config)
-{
+	int	i;
 	int	j;
 
-	j = -1;
-	while (is_space(map[end_of_config][++j]));
-	map[end_of_config][j] = 's';
-	if (map[end_of_config][j + 1] == '1'
-		&& !draw_board(map, j + 1, end_of_config, RIGHT))
-		return (CUB_OK);
-	else if (map[end_of_config + 1][j]
-		&& map[end_of_config + 1][j] == '1'
-		&& !draw_board(map, j, end_of_config + 1, DOWN))
-		return (CUB_OK);
-	return (CUB_ERR);
+	i = -1;
+	while (map[++i])
+	{
+		j = -1;
+		while (map[i][++j])
+		{
+			if (map[i][j] == ' ')
+			{
+				if ((i > 0 && is_close_line(map[i - 1], j))
+					|| (j > 0 && is_inner_object(map[i][j - 1]))
+					|| (map[i][j + 1] && is_inner_object(map[i][j + 1]))
+					|| (map[i + 1] && is_close_line(map[i + 1], j)))
+					return (UNCLOSED_MAP);
+			}
+		}
+	}
+	return (CUB_OK);
 }
 
 int	map_check_valid_sym(t_config *cfg, int start_map)
@@ -100,8 +60,7 @@ int	map_check_valid_sym(t_config *cfg, int start_map)
 		j = 0;
 		if (is_empty_line(cfg->config_txt[start_map]))
 			return (CUB_ERR);
-		while (cfg->config_txt[start_map][j]
-			&& cfg->config_txt[start_map][j] != '\n')
+		while (cfg->config_txt[start_map][j])
 		{
 			if (is_player(cfg->config_txt[start_map][j]))
 			{
