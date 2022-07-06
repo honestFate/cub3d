@@ -2,14 +2,21 @@
 
 static int	get_next_number(char *str, int *nmb, char del, int i)
 {
-	while (ft_isspace(str[i++]));
+	while (is_space(str[i]))
+		++i;
 	if (!ft_isdigit(str[i]))
+	{
+		printf("%c", str[i]);
 		return (-1);
+	}
 	*nmb = ft_atoi(str);
-	while (ft_isdigit(str[i++]));
-	while (ft_isspace(str[i++]));
+	while (ft_isdigit(str[i]))
+		++i;
+	while (is_space(str[i]))
+		++i;
 	if (str[i] != del)
 		return (-1);
+	++i;
 	return (i);
 }
 

@@ -41,6 +41,7 @@ int	parse_path(t_config *config, char *str, int index)
 	int	i;
 
 	i = 0;
+	ft_log("parsing path");
 	while (is_space(str[i++]));
 	if (!str[i])
 		return (EMPTY_IDENTIFER);
@@ -55,11 +56,12 @@ int	parse_color(t_config *config, char *str, int index)
 	int	i;
 
 	i = 0;
+	ft_log("parsing color");
 	while (is_space(str[i++]));
 	if (!str[i])
 		return (EMPTY_IDENTIFER);
-	if (parse_rgb(&str[i], config->path_to_texture[index - F_INDEX]))
-		return (INVALID_CONFIG_PARAM);
+	if (parse_rgb(&str[i], &config->colors[index - F_INDEX]))
+		return (NOT_RGB);
 	return (CUB_OK);
 }
 
@@ -73,10 +75,10 @@ int	parse_identefer(t_config *config, char *str)
 	if (!str[i++])
 		return (CUB_OK);
 	index = get_identefer_index(str);
-	if (index >= NO_INDEX && i <= EA_INDEX)
-		return (parse_color(config, str + i + 2, index));
+	if (index >= NO_INDEX && index <= EA_INDEX)
+		return (parse_path(config, str + i + 2, index));
 	else if (index >= F_INDEX && index <= C_INDEX)
-		return (parse_path(config, str + i + 1, index));
+		return (parse_color(config, str + i + 1, index));
 	else if (ft_isdigit(str[i]))
 		return (END_CONFIG);
 	return (UNKNOW_SYM);

@@ -6,7 +6,8 @@
 # include <stdlib.h>
 # include <errno.h>
 # include <string.h>
-# include "mlx.h"
+# include <math.h>
+# include "../mlx/mlx.h"
 # include "libft.h"
 # include "get_next_line.h"
 
@@ -27,6 +28,8 @@
 # define TEXTURE_PATH_ERROR 14
 # define CANT_CONVERT 15
 # define TOO_MANY_PLAYERS 16
+# define UNCLOSED_MAP 17
+# define NO_PLAYER 18
 
 # define NORTH_TEXTURE_IDENTIFER "NO"
 # define SOUTH_TEXTURE_IDENTIFER "SO"
@@ -43,19 +46,27 @@
 # define WE_INDEX 2
 # define EA_INDEX 3
 # define SCREEN_INDEX 4
+# define MINIMAP_INDEX 5
 # define F_INDEX 4
 # define C_INDEX 5
 
+# define UP 0
+# define DOWN 1
 # define RIGHT 2
 # define LEFT 3
-# define DOWN 4
-# define UP 5
 
-typedef struct s_point2d
+# define BLOCK_SIZE 25
+
+#ifndef M_PI
+# define M_PI 3.1415927
+#endif
+
+typedef struct s_player
 {
-	int	x;
-	int	y;
-}	t_point2d;
+	float	x;
+	float	y;
+	int	rotate;
+}	t_player;
 
 
 typedef struct	s_img {
@@ -76,6 +87,9 @@ typedef struct s_cub
 	int		floor_color;
 	int		ceilling_color;
 	char	**map;
+	int		map_height;
+	int		map_width;
+	t_player	*player;
 }	t_cub;
 
 typedef struct s_config
@@ -85,6 +99,11 @@ typedef struct s_config
 	int		colors[2];
 }	t_config;
 
+/*----------DRAW----------*/
+
+/*----minimap---*/
+void	draw_block(t_img *img, int x, int y);
+void	draw_minimap(t_cub *cub);
 
 /*----------PARSER--------*/
 
@@ -93,7 +112,7 @@ int	fill_list(int fd, t_list **list);
 int	read_config(char ***config, char *path_to_cfg);
 
 /*----parse_config----*/
-int		parse_config(t_cub **cub, char *path_to_cfg);
+int		parse_config(t_cub *cub, char *path_to_cfg);
 int	parse_settings(t_cub *cub, t_config *config, int *end_of_config);
 
 /*----convert_img----*/
@@ -111,10 +130,7 @@ int	parse_rgb(char *str, int *color);
 
 /*----parse_config_map----*/
 int	is_empty_line(char *line);
-int	go_rl_direction(char **map, int x, int y, int direction);
-int	go_ud_direction(char **map, int x, int y, int direction);
-int	draw_board(char **map, int x, int y, int direction);
-int	is_closed(char **map, int end_of_config);
+int	is_closed(char **map);
 int	map_check_valid_sym(t_config *cfg, int start_map);
 int	parse_map(t_cub *cub, t_config *cfg, int end_of_config);
 
@@ -126,6 +142,12 @@ int		is_space(char c);
 int	is_player(char c);
 int is_map_object(char c);
 int	is_inner_object(char c);
+void	ft_log(char *str); //debug
+
+/*----print_utils----*/
+void	init_image(t_cub *cub, int index, int width, int height);
+void	put_pixel_img(t_img *data, int x, int y, int color);
+int	player_pos(float p);
 
 /*----clear----*/
 void	safe_free(void *data);
@@ -142,7 +164,7 @@ void	print_error(int error);
 void	error_in_line(char *str, int error);
 
 /*----print_default----*/
-int		print_config_format(void);
+void		print_config_format(void);
 
 /*----color----*/
 int		create_trgb(int t, int r, int g, int b);

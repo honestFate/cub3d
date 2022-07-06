@@ -1,6 +1,6 @@
 #include "cub.h"
 
-int	print_config_format(void)
+void	print_config_format(void)
 {
 	printf("USAGE\n");
 	printf("./cub3d path_to_config\n");
@@ -11,6 +11,6 @@ int	print_config_format(void)
 	printf("EA ./path_to_the_east_texture\n");
 	printf("F [0,255], [0,255], [0,255]\n");
 	printf("C [0,255], [0,255], [0,255]\n");
-	printf("map closed/surrounded by walls, and N,S,E or W for\
-		the player's start position and spawning orientation.\n");
+	printf("map closed/surrounded by walls, and N,S,E or W for ");
+	printf("the player's start position and spawning orientation.\n");
 }

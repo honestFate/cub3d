@@ -7,16 +7,20 @@ char	**lst_to_arr(t_list *list, int len)
 	t_list	*ptr;
 
 	i = -1;
-	arr = ft_calloc(len, sizeof(char *));
+	arr = ft_calloc(len + 1, sizeof(char *));
 	if (!arr)
-		return (CUB_ERR);
+		return (NULL);
 	while (++i < len)
 	{
-		arr[i] = list->content;
+		//printf("list:\t%s", list->content);
+		arr[i] = ft_strtrim(list->content, "\n");
+		free(list->content);
 		ptr = list;
 		list = list->next;
 		free(ptr);
+		//printf("arr:\t%s", arr[i]);
 	}
+	return (arr);
 }
 
 int	is_space(char c)
@@ -49,4 +53,10 @@ int	is_inner_object(char c)
 	if (is_player(c) || c == '0')
 		return (1);
 	return (0);
+}
+
+void	ft_log(char *str)
+{
+	ft_putstr_fd("log: ", 1);
+	ft_putendl_fd(str, 1);
 }

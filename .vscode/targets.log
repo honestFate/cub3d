@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jun 30 00:24:30 2022
+# Make data base, printed on Wed Jul  6 12:01:34 2022
 
 # Variables
 
@@ -33,7 +33,7 @@ VSCODE_LOG_NATIVE = false
 # environment
 IM_CONFIG_PHASE = 1
 # makefile (from 'Makefile', line 7)
-INCLUDES := minishell.h color.h
+INCLUDES := cub.h
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
@@ -51,8 +51,8 @@ SNAP_DATA = /var/snap/code/99
 # environment
 VSCODE_NLS_CONFIG = {"locale":"ru","availableLanguages":{"*":"ru"},"_languagePackId":"4165c719fdf7a78444ed970b4565033b.ru","_translationsConfigFile":"/home/fate/.config/Code/clp/4165c719fdf7a78444ed970b4565033b.ru/tcf.json","_cacheRoot":"/home/fate/.config/Code/clp/4165c719fdf7a78444ed970b4565033b.ru","_resolvedLanguagePackCoreLocation":"/home/fate/.config/Code/clp/4165c719fdf7a78444ed970b4565033b.ru/30d9c6cd9483b2cc586687151bcbcd635f373630","_corruptedFile":"/home/fate/.config/Code/clp/4165c719fdf7a78444ed970b4565033b.ru/corrupted.info","_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:44356
-# makefile (from 'Makefile', line 4)
+JOURNAL_STREAM = 8:41543
+# makefile (from 'Makefile', line 3)
 CFLAGS := -Wall -Wextra -Werror -g
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
@@ -69,23 +69,24 @@ GIO_LAUNCHED_DESKTOP_FILE = /var/lib/snapd/desktop/applications/code_code.deskto
 # environment
 USERNAME = fate
 # makefile (from 'Makefile', line 18)
-SOURCES :=   gnl/get_next_line.c gnl/get_next_line_utils.c main.c
+SOURCES := parser/convert_img.c parser/parse_config.c parser/parse_config_line.c parser/parse_config_map.c parser/parse_rgb.c parser/read_config.c draw/minimap.c utils/print_utils.c utils/clear.c utils/color.c utils/print_default.c utils/print_error.c utils/utils.c utils/validate.c gnl/get_next_line.c gnl/get_next_line_utils.c main.c
 # environment
 MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
+ 
 # environment
 XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
 # environment
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
-# makefile (from 'Makefile', line 3)
+# makefile (from 'Makefile', line 2)
 BUILDDIR := object
 # environment
 _ = /snap/code/99/usr/share/code/code
 # environment
-MANAGERPID = 1351
+MANAGERPID = 1359
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d3c6f5a2-4a39-4aa3-8213-f22349945e5b.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d2bede75-b5e4-4436-8379-7face952aa6d.sock
 # environment
 VSCODE_CWD = /home/fate
 # environment
@@ -93,17 +94,19 @@ GSETTINGS_SCHEMA_DIR = /snap/code/99/usr/share/glib-2.0/schemas
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:/usr/local/go/bin:/home/fate/go/bin
+PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:/usr/local/go/bin:/home/fate/go/bin:/usr/include/GNUstep/:/usr/include/swift-5.6.2-RELEASE-ubuntu20.04/usr/bin/
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/fate-HP-Pavilion-Gaming-Laptop-15-dk0xxx:@/tmp/.ICE-unix/1578,unix/fate-HP-Pavilion-Gaming-Laptop-15-dk0xxx:/tmp/.ICE-unix/1578
+SESSION_MANAGER = local/fate-HP-Pavilion-Gaming-Laptop-15-dk0xxx:@/tmp/.ICE-unix/1583,unix/fate-HP-Pavilion-Gaming-Laptop-15-dk0xxx:/tmp/.ICE-unix/1583
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GDK_PIXBUF_MODULE_FILE = /home/fate/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # environment
 SNAP = /snap/code/99
+# makefile (from 'Makefile', line 12)
+DRAW_SRC = minimap.c
 # environment
 SNAP_VERSION = 30d9c6cd
 # environment
@@ -115,27 +118,25 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 86305aec47244fc7b52af197b32fd14e
+INVOCATION_ID = ca71c72bb94e415b9e0806e52a27ad36
 # environment
 GDK_PIXBUF_MODULEDIR = /snap/code/99/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # makefile (from 'Makefile', line 8)
 LIB := libft/libft.a
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
-# makefile (from 'Makefile', line 10)
-EXECUTE_SRC = 
 # environment
 XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3509
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2024
 # automatic
 %F = $(notdir $%)
 # environment
 DISPLAY = :0
 # makefile (from 'Makefile', line 5)
-MLXFLAGS := -framework OpenGL -framework AppKit
+MLXFLAGS := -lXext -lX11 -lbsd -lm
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -145,7 +146,7 @@ PWD = /home/fate/Рабочий стол/21projects/cub3d
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1540
+SSH_AGENT_PID = 1545
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -190,10 +191,12 @@ QT_IM_MODULE = ibus
 SNAP_USER_DATA = /home/fate/snap/code/99
 # environment
 SHLVL = 0
-# makefile (from 'Makefile', line 2)
+# makefile (from 'Makefile', line 1)
 CC := clang
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
+# makefile (from 'Makefile', line 4)
+MLX_FOLDER := mlx/
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -205,21 +208,21 @@ SNAP_REVISION = 99
 # environment
 XDG_CURRENT_DESKTOP = Unity
 # makefile (from 'Makefile', line 22)
-NAME = minishell
+NAME = cub3d
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
 MAKE_COMMAND := make
 # makefile (from 'Makefile', line 6)
-INC := -I./includes/ -I./gnl/ -I./libft/
-# makefile (from 'Makefile', line 12)
-PARSER_SRC = 
+INC := -I./includes/ -I./gnl/ -I./libft/ -I./mlx/
+# makefile (from 'Makefile', line 10)
+PARSER_SRC = convert_img.c           parse_config.c          parse_config_line.c     parse_config_map.c      parse_rgb.c             read_config.c
 # default
 .VARIABLES := 
 # automatic
 *F = $(notdir $*)
 # makefile (from 'Makefile', line 14)
-UTILS_SRC = clear.c	color.c  print_default.c  print_error.c  utils.c  validate.c
+UTILS_SRC = print_utils.c	clear.c	color.c  print_default.c  print_error.c  utils.c  validate.c
 # environment
 VSCODE_IPC_HOOK = /run/user/1000/vscode-762d7a2a-1.68.1-main.sock
 # environment
@@ -271,14 +274,13 @@ GJS_DEBUG_OUTPUT = stderr
 # default
 .RECIPEPREFIX := 
 # makefile (from 'Makefile', line 19)
-OBJECTS := object/gnl/get_next_line.o object/gnl/get_next_line_utils.o object/main.o
+OBJECTS := object/parser/convert_img.o object/parser/parse_config.o object/parser/parse_config_line.o object/parser/parse_config_map.o object/parser/parse_rgb.o object/parser/read_config.o object/draw/minimap.o object/utils/print_utils.o object/utils/clear.o object/utils/color.o object/utils/print_default.o object/utils/print_error.o object/utils/utils.o object/utils/validate.o object/gnl/get_next_line.o object/gnl/get_next_line_utils.o object/main.o
 # environment
 LANG = C
 # environment
-VSCODE_PID = 3561
+VSCODE_PID = 2086
 # variable set hash-table stats:
- 
-# Load=133/1024=13%, Rehash=0, Collisions=17/174=10%
+# Load=134/1024=13%, Rehash=0, Collisions=17/171=10%
 
 # Pattern-specific Variable Values
 
@@ -286,15 +288,19 @@ VSCODE_PID = 3561
 
 # Directories
 
-# . (device 2054, inode 926723): 13 files, no impossibilities.
-# gnl (device 2054, inode 2624395): 2 files, no impossibilities so far.
+# utils (device 2054, inode 2624469): 9 files, no impossibilities so far.
+# . (device 2054, inode 926723): 19 files, no impossibilities.
+# parser (device 2054, inode 2624466): 7 files, no impossibilities so far.
+# includes (device 2054, inode 2624399): 3 files, no impossibilities so far.
+# draw (device 2054, inode 927233): 3 files, no impossibilities so far.
+# gnl (device 2054, inode 2624395): 4 files, no impossibilities so far.
 
-# 15 files, no impossibilities in 2 directories.
+# 45 files, no impossibilities in 6 directories.
 
 # Implicit Rules
 
-object/%.o: %.c
-#  recipe to execute (from 'Makefile', line 32):
+object/%.o: %.c includes/cub.h
+#  recipe to execute (from 'Makefile', line 33):
 	mkdir -p $(@D)
 	$(CC) $(CFLAGS) $(INC) -g -c -o $@ $<
 
@@ -302,14 +308,43 @@ object/%.o: %.c
 
 # Files
 
-all: minishell
+# Not a target:
+draw/minimap.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-06 11:41:27.955609486
+#  File has been updated.
+#  Successfully updated.
+
+object/parser/parse_config_line.o: parser/parse_config_line.c includes/cub.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'parser/parse_config_line'
+#  Last modified 2022-07-06 12:01:28.899407867
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 33):
+	mkdir -p $(@D)
+	$(CC) $(CFLAGS) $(INC) -g -c -o $@ $<
+
+# Not a target:
+parser/parse_rgb.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-03 22:06:37.357856789
+#  File has been updated.
+#  Successfully updated.
+
+all: cub3d
 #  Command line target.
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/7=0%
+#  Successfully updated.
+
+# Not a target:
+parser/parse_config_map.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-04 00:44:49.483180255
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 gnl/get_next_line.c:
@@ -318,57 +353,211 @@ gnl/get_next_line.c:
 #  File has been updated.
 #  Successfully updated.
 
+object/utils/color.o: utils/color.c includes/cub.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'utils/color'
+#  Last modified 2022-07-06 12:01:29.187424833
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 33):
+	mkdir -p $(@D)
+	$(CC) $(CFLAGS) $(INC) -g -c -o $@ $<
+
+# Not a target:
+parser/read_config.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-03 21:19:38.517482289
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+parser/convert_img.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-05 14:44:41.063678654
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+main.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-06 11:58:25.31915556
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+utils/print_default.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-03 12:42:13.611119341
+#  File has been updated.
+#  Successfully updated.
+
+object/utils/print_utils.o: utils/print_utils.c includes/cub.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'utils/print_utils'
+#  Last modified 2022-07-06 12:01:29.107420144
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 33):
+	mkdir -p $(@D)
+	$(CC) $(CFLAGS) $(INC) -g -c -o $@ $<
+
+cub3d: object/parser/convert_img.o object/parser/parse_config.o object/parser/parse_config_line.o object/parser/parse_config_map.o object/parser/parse_rgb.o object/parser/read_config.o object/draw/minimap.o object/utils/print_utils.o object/utils/clear.o object/utils/color.o object/utils/print_default.o object/utils/print_error.o object/utils/utils.o object/utils/validate.o object/gnl/get_next_line.o object/gnl/get_next_line_utils.o object/main.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-06 12:01:29.547445934
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 27):
+	@echo "Linking..."
+	@make -C ./$(MLX_FOLDER)
+	@make bonus -C ./libft/
+	$(CC) $^ -o $(NAME) $(LIB) $(MLXFLAGS) $(MLX_FOLDER)libmlx.a
+
+# Not a target:
+parser/parse_config_line.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-03 22:07:53.207740328
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+utils/utils.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-03 21:22:07.334816094
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+utils/validate.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-03 20:21:12.109584672
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-06 12:01:26.75527923
+#  File has been updated.
+ 
+#  Successfully updated.
+
+object/utils/print_default.o: utils/print_default.c includes/cub.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'utils/print_default'
+#  Last modified 2022-07-06 12:01:29.227427178
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 33):
+	mkdir -p $(@D)
+	$(CC) $(CFLAGS) $(INC) -g -c -o $@ $<
+
+object/gnl/get_next_line_utils.o: gnl/get_next_line_utils.c includes/cub.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'gnl/get_next_line_utils'
+#  Last modified 2022-07-06 12:01:29.419438432
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 33):
+	mkdir -p $(@D)
+	$(CC) $(CFLAGS) $(INC) -g -c -o $@ $<
+
 .PHONY: clean fclean re
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-Makefile:
+utils/clear.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-27 22:52:04.736693407
+#  Last modified 2022-07-05 18:24:23.258945548
 #  File has been updated.
 #  Successfully updated.
 
-# Not a target:
-object/gnl/get_next_line_utils.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-minishell: object/gnl/get_next_line.o object/gnl/get_next_line_utils.o object/main.o
-#  Implicit rule search has not been done.
-#  File does not exist.
+object/draw/minimap.o: draw/minimap.c includes/cub.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'draw/minimap'
+#  Last modified 2022-07-06 12:01:29.0674178
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/7=0%
-#  recipe to execute (from 'Makefile', line 27):
-	@echo "Linking..."
-	@make -C ./libft/
-	$(CC) $^ -o $(NAME) $(LIB) $(MLXFLAGS)
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 33):
+	mkdir -p $(@D)
+	$(CC) $(CFLAGS) $(INC) -g -c -o $@ $<
+
+object/utils/utils.o: utils/utils.c includes/cub.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'utils/utils'
+#  Last modified 2022-07-06 12:01:29.315432336
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 33):
+	mkdir -p $(@D)
+	$(CC) $(CFLAGS) $(INC) -g -c -o $@ $<
+
+object/utils/validate.o: utils/validate.c includes/cub.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'utils/validate'
+#  Last modified 2022-07-06 12:01:29.35543468
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 33):
+	mkdir -p $(@D)
+	$(CC) $(CFLAGS) $(INC) -g -c -o $@ $<
 
 fclean: clean
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 40):
+#  recipe to execute (from 'Makefile', line 42):
 	@make -C ./libft/ fclean
 	$(RM) -r $(NAME)
+
+# Not a target:
+includes/cub.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-06 11:59:45.765323231
+#  File has been updated.
+#  Successfully updated.
 
 norm:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 46):
+#  recipe to execute (from 'Makefile', line 48):
 	@norminette *.c *.h
+
+# Not a target:
+utils/print_error.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-04 00:45:57.289049043
+#  File has been updated.
+#  Successfully updated.
+
+object/parser/parse_config.o: parser/parse_config.c includes/cub.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'parser/parse_config'
+#  Last modified 2022-07-06 12:01:28.85940549
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 33):
+	mkdir -p $(@D)
+	$(CC) $(CFLAGS) $(INC) -g -c -o $@ $<
 
 # Not a target:
 .DEFAULT:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+
+object/utils/clear.o: utils/clear.c includes/cub.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'utils/clear'
+#  Last modified 2022-07-06 12:01:29.147422489
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 33):
+	mkdir -p $(@D)
+	$(CC) $(CFLAGS) $(INC) -g -c -o $@ $<
 
 re: fclean all
 #  Phony target (prerequisite of .PHONY).
@@ -381,58 +570,123 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 36):
+#  recipe to execute (from 'Makefile', line 37):
+	@make -C ./$(MLX_FOLDER) clean
 	@make -C ./libft/ clean
 	$(RM) -r $(BUILDDIR)
 
-object/gnl/get_next_line.o: gnl/get_next_line.c
+object/gnl/get_next_line.o: gnl/get_next_line.c includes/cub.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'gnl/get_next_line'
-#  File does not exist.
+#  Last modified 2022-07-06 12:01:29.391436791
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := object/gnl/get_next_line.o
-# automatic
-# % := 
-# automatic
-# * := gnl/get_next_line
-# automatic
-# + := gnl/get_next_line.c
-# automatic
-# | := 
-# automatic
-# < := gnl/get_next_line.c
-# automatic
-# ^ := gnl/get_next_line.c
-# automatic
-# ? := gnl/get_next_line.c
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/18=6%
-#  recipe to execute (from 'Makefile', line 32):
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 33):
 	mkdir -p $(@D)
 	$(CC) $(CFLAGS) $(INC) -g -c -o $@ $<
 
 # Not a target:
-object/main.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+gnl/get_next_line_utils.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-27 22:46:19.871703786
+#  File has been updated.
+#  Successfully updated.
+
+object/utils/print_error.o: utils/print_error.c includes/cub.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'utils/print_error'
+#  Last modified 2022-07-06 12:01:29.267429522
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 33):
+	mkdir -p $(@D)
+	$(CC) $(CFLAGS) $(INC) -g -c -o $@ $<
+
+# Not a target:
+parser/parse_config.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-03 22:08:43.433008722
+#  File has been updated.
+#  Successfully updated.
+
+object/parser/parse_rgb.o: parser/parse_rgb.c includes/cub.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'parser/parse_rgb'
+#  Last modified 2022-07-06 12:01:28.987413096
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 33):
+	mkdir -p $(@D)
+	$(CC) $(CFLAGS) $(INC) -g -c -o $@ $<
+
+object/parser/parse_config_map.o: parser/parse_config_map.c includes/cub.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'parser/parse_config_map'
+#  Last modified 2022-07-06 12:01:28.947410719
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 33):
+	mkdir -p $(@D)
+	$(CC) $(CFLAGS) $(INC) -g -c -o $@ $<
+
+object/main.o: main.c includes/cub.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'main'
+#  Last modified 2022-07-06 12:01:29.467441245
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 33):
+	mkdir -p $(@D)
+	$(CC) $(CFLAGS) $(INC) -g -c -o $@ $<
+
+object/parser/read_config.o: parser/read_config.c includes/cub.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'parser/read_config'
+#  Last modified 2022-07-06 12:01:29.027415455
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 33):
+	mkdir -p $(@D)
+	$(CC) $(CFLAGS) $(INC) -g -c -o $@ $<
+
+# Not a target:
+utils/color.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-27 22:46:19.879703638
+#  File has been updated.
+#  Successfully updated.
+
+object/parser/convert_img.o: parser/convert_img.c includes/cub.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'parser/convert_img'
+#  Last modified 2022-07-06 12:01:28.815402875
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 33):
+	mkdir -p $(@D)
+	$(CC) $(CFLAGS) $(INC) -g -c -o $@ $<
+
+# Not a target:
+utils/print_utils.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-05 23:41:33.676970546
+#  File has been updated.
+#  Successfully updated.
 
 # files hash-table stats:
-# Load=14/1024=1%, Rehash=0, Collisions=0/39=0%
+# Load=45/1024=4%, Rehash=0, Collisions=2/166=1%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 32 / storage = 314 B / avg = 9 B
-# current buf: size = 8162 B / used = 314 B / count = 32 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 100 / storage = 1528 B / avg = 15 B
+# current buf: size = 8162 B / used = 1528 B / count = 100 / avg = 15 B
 
-# strcache performance: lookups = 54 / hit rate = 40%
+# strcache performance: lookups = 185 / hit rate = 45%
 # hash-table stats:
-# Load=32/8192=0%, Rehash=0, Collisions=2/54=4%
-# Finished Make data base on Thu Jun 30 00:24:30 2022
+# Load=100/8192=1%, Rehash=0, Collisions=7/185=4%
+# Finished Make data base on Wed Jul  6 12:01:34 2022
 
  
