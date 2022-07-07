@@ -42,7 +42,8 @@ int	parse_path(t_config *config, char *str, int index)
 
 	i = 0;
 	ft_log("parsing path");
-	while (is_space(str[i++]));
+	while (is_space(str[i]))
+		++i;
 	if (!str[i])
 		return (EMPTY_IDENTIFER);
 	if (config->path_to_texture[index])
@@ -57,7 +58,8 @@ int	parse_color(t_config *config, char *str, int index)
 
 	i = 0;
 	ft_log("parsing color");
-	while (is_space(str[i++]));
+	while (is_space(str[i]))
+		++i;
 	if (!str[i])
 		return (EMPTY_IDENTIFER);
 	if (parse_rgb(&str[i], &config->colors[index - F_INDEX]))
@@ -71,8 +73,9 @@ int	parse_identefer(t_config *config, char *str)
 	int	index;
 
 	i = 0;
-	while (is_space(str[i++]));
-	if (!str[i++])
+	while (is_space(str[i]))
+		++i;
+	if (!str[i])
 		return (CUB_OK);
 	index = get_identefer_index(str);
 	if (index >= NO_INDEX && index <= EA_INDEX)

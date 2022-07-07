@@ -21,9 +21,12 @@ int	parse_settings(t_cub *cub, t_config *config, int *end_of_config)
 		}
 	}
 	ft_log("settings readed");
+	printf("floor %d %d %d %d\n", get_t(config->colors[0]), get_r(config->colors[0]), get_g(config->colors[0]), get_b(config->colors[0]));
+	printf("ceilling %d %d %d %d\n", get_t(config->colors[1]), get_r(config->colors[1]), get_g(config->colors[1]), get_b(config->colors[1]));
 	if (check_config_param(config) != CUB_OK)
 		return (INVALID_CONFIG_PARAM);
-	ft_log("settings check ok");
+	cub->floor_color = config->colors[0];
+	cub->ceilling_color = config->colors[1];
 	return (convert_img(cub, config));
 }
 

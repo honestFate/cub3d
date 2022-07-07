@@ -59,8 +59,8 @@ void	redraw_window(t_cub *cub, int index)
 	mlx_clear_window(cub->mlx_ptr, cub->win_ptr);
 	mlx_put_image_to_window(cub->mlx_ptr, cub->win_ptr,
 		cub->imgs[SCREEN_INDEX].img, 0, 0);
-	mlx_put_image_to_window(cub->mlx_ptr, cub->win_ptr,
-		cub->imgs[MINIMAP_INDEX].img, 700, 300);
+	/*mlx_put_image_to_window(cub->mlx_ptr, cub->win_ptr,
+		cub->imgs[MINIMAP_INDEX].img, 100, 100);*/
 	/*mlx_put_image_to_window(cub->mlx_ptr, cub->win_ptr,
 		cub->imgs[index].img, 0, 0);*/
 }
@@ -75,29 +75,26 @@ void	move_player(t_cub *cub, int direction)
 		cub->player->rotate = abs(cub->player->rotate) % 360;*/
 	x = 0;
 	y = 0;
+	radian = cub->player->rotate;
 	if (direction == UP)
 	{
-		radian = (cub->player->rotate * M_PI) / 180;
 		x = cub->player->x + 2 * cos(radian);
 		y = cub->player->y + 2 * sin(radian);
 	}
 	else if (direction == DOWN)
 	{
-		radian = (cub->player->rotate * M_PI) / 180;
 		x = cub->player->x - 2 * cos(radian);
 		y = cub->player->y - 2 * sin(radian);
 	}
 	else if (direction == RIGHT)
 	{
-		radian = ((cub->player->rotate + 90) * M_PI) / 180;
-		x = cub->player->x + 2 * cos(radian);
-		y = cub->player->y + 2 * sin(radian);
+		x = cub->player->x + 2 * cos(radian + 1.570796);
+		y = cub->player->y + 2 * sin(radian + 1.570796);
 	}
 	else if (direction == LEFT)
 	{
-		radian = ((cub->player->rotate - 90) * M_PI) / 180;
-		x = cub->player->x + 2 * cos(radian);
-		y = cub->player->y + 2 * sin(radian);
+		x = cub->player->x + 2 * cos(radian - 1.570796);
+		y = cub->player->y + 2 * sin(radian - 1.570796);
 	}
 	if (cub->map[player_pos(y)][player_pos(x)] != '1')
 	{
@@ -141,12 +138,12 @@ int	key_handler(int key, void *cub)
 	}
 	if (key == 65361) //left
 	{
-		((t_cub *)cub)->player->rotate -= 2;
+		((t_cub *)cub)->player->rotate -= 0.034906;
 		printf("watching left\n");
 	}
 	if (key == 65363) //right
 	{
-		((t_cub *)cub)->player->rotate += 2;
+		((t_cub *)cub)->player->rotate += 0.034906;
 		printf("watching right\n");
 	}
 	//printf("%f %f %d\n", ((t_cub *)cub)->player->x, ((t_cub *)cub)->player->y, ((t_cub *)cub)->player->rotate);
@@ -169,11 +166,11 @@ int	init_player(t_cub *cub)
 		while (cub->map[i][j])
 		{
 			if (cub->map[i][j] == 'N')
-				cub->player->rotate = 270;
+				cub->player->rotate = 4.712388;
 			else if (cub->map[i][j] == 'W')
-				cub->player->rotate = 180;
+				cub->player->rotate = 3.141592;
 			else if (cub->map[i][j] == 'S')
-				cub->player->rotate = 90;
+				cub->player->rotate = 1.570796;
 			else if (cub->map[i][j] == 'E')
 				cub->player->rotate = 0;
 			if (is_player(cub->map[i][j]))

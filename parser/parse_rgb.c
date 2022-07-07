@@ -9,7 +9,7 @@ static int	get_next_number(char *str, int *nmb, char del, int i)
 		printf("%c", str[i]);
 		return (-1);
 	}
-	*nmb = ft_atoi(str);
+	*nmb = ft_atoi(str + i);
 	while (ft_isdigit(str[i]))
 		++i;
 	while (is_space(str[i]))
